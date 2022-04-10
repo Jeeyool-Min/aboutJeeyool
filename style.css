@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Raleway:wght@200;300;400;800;900&family=Rammetto+One&family=Shrikhand&display=swap');
+/*
+font-family: 'Open Sans', sans-serif;
+font-family: 'Rammetto One', cursive;
+font-family: 'Raleway', sans-serif;
+font-family: 'Shrikhand', cursive;
+*/
+:root {
+    --emp: #8e8377;
+    --main:#F0EDE8;
+    --off-white: #f6f6f6;
+    --white: #fff;
+    --dark: #23272a;
+    --gray: #515151;
+    --error:#ffb9ad;
+    --highlight: #fff9f9;
+}
+html, body {
+    height: 100%;
+    margin:0;
+    font-family: 'Open Sans', sans-serif;
+    font-size:1.1rem;
+    font-weight:400;
+    color:var(--dark);
+}
+div#content-container{
+    width:100%;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    min-height: 800px;
+    align-items: center;
+    justify-content: center
+}
+h2 {
+    font-weight: 700;
+    font-size: 2.3rem;
+    margin-bottom: 40px;
+    color:var(--gray);
+}
+
+span.required {
+    font-weight: 800;
+    margin-left:3px;
+}
+.centered {
+    text-align: center;
+}
+p.justify{
+    text-align: justify;
+}
+section#overal-sec{
+    background-color: var(--main);
+}
+section#overal-sec img{
+    width:350px;
+}
+section#overal-sec p.centered {
+    margin-bottom: 0;
+}
+section#overal-sec footer {
+    position: relative;
+    margin: 20px 0;
+}
+section#overal-sec footer a {
+    margin: 10px;
+    text-decoration: none;
+    color:var(--gray);
+}
+section#overal-sec footer a:after {
+    content: '';
+    margin-left: 0.5em;
+    pointer-events: none;
+    position: absolute;
+    width: 0.0625rem;
+    height: 60%;
+    top: 20%;
+    background: var(--dark);
+    opacity: 0.3;
+}
+section#overal-sec footer a:last-child:after {
+    content: '';
+    margin: 0;
+    width: 0;
+    height: 0;
+}
+section#aboutme-sec {
+    align-items: center;
+}
+section#aboutme-sec #aboutme-container {
+    display: grid;
+    align-items: baseline;
+    grid-template-columns: 1fr 4fr 3fr 1fr;
+    column-gap: 60px;
+}
+#aboutme-container > div {
+    margin: 20px 60px 20px 20px;
+}
+section#aboutme-sec div.info-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 4fr;
+    margin: 20px 0;
+    align-items: center;
+}
+section#aboutme-sec div.short-margin {
+    grid-template-columns: 1fr 1fr 15fr;
+}
+section#aboutme-sec div.info-container h3 {
+    margin: 0;
+    font-weight: 700;
+    color: var(--gray);
+    font-size: 1.14rem;
+}
+section#aboutme-sec div.info-container span {
+        grid-column-start: 3;
+        grid-column-end: 4;
+}
+div#about{
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+div#basic-info {
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+section#aboutme-sec, section#contactme-sec{
+    background-color: var(--white);
+}
+section#education-sec{
+    background-color: var(--off-white);
+}
+h1#name-tag {
+    font-family: 'Raleway', sans-serif;
+    font-size: 3.13rem;
+    font-weight: 900;
+    color: var(--gray);
+    margin: 30px 0 0 0;
+}
+
+div.cards-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+div.card-container {
+    grid-template-columns: 1fr 1fr 2fr 1fr;
+    display: grid;
+    text-align: center;
+    margin-bottom: 20px;
+    height: 200px;
+}
+div.card-container div.visual {
+    /*align-self: center;*/
+    grid-column: 2/3;
+    background-color: var(--emp);
+    height: 100%;
+    color:var(--white);
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr 2fr;
+}
+span.edu-period{
+    grid-row: 2/3;
+    align-self: center;
+}
+.visual h3 {
+    grid-row: 3/4;
+    align-self: center;
+    margin:0;
+}
+div.description h3 {
+    margin-bottom: 0px;
+    font-weight: 100;
+
+    color: var(--dark);
+}
+div.description h4 {
+    margin-top: 5px;
+    margin-bottom: 0;
+    color: var(--emp);
+    font-weight: 800;
+}
+div.description > p {
+    margin-top:15px;
+    margin-bottom:5px;
+    color: var(--dark);
+}
+div.description>ul{
+    margin-top:0;
+    color: var(--gray);
+    font-size: .9rem;
+}
+div.card-container div.description {
+    /*align-self: center;*/
+    grid-column: 3/4;
+    text-align: left;
+    padding-left: 50px;
+    background-color: var(--white);
+    height: 100%;
+}
+section#contactme-sec{
+    min-height: 1100px;
+}
+form {
+    margin-top: 0;
+    padding: 2em;
+    background-color: var(--main);
+    min-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-gap: 20px;
+    /*grid-template-columns: 1fr 3fr;*/
+    align-items: center;
+}
+form label, form .radio-title {
+    font-size:1.1em;
+    font-weight: 700;
+    color: var(--gray);
+}
+
+form input[type="radio"]+label {
+    font-weight: 500;
+}
+form input, form textarea {
+    padding:10px;
+    border: 1px solid rgb(206, 212, 218);
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: var(--gray);
+}
+form div.form-control{
+    grid-template-columns: 1fr 3fr;
+    display: grid;
+}
+form div.radio {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: baseline;
+}
+.radio-option-wrapper:first-child{
+    grid-column-start: 2;
+}
+form .buttons {
+    text-align: right;
+}
+
+input[type="submit"], input[type="reset"]{
+    width:150px;
+    background-color: var(--emp);
+    color:var(--white);
+    font-weight: 700;
+}
+
+form.validated input:invalid {
+    border-color: var(--error);
+    background-color: var(--highlight);
+    border-width: 3px;
+}
