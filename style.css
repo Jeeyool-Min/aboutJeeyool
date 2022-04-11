@@ -59,6 +59,31 @@ section#overal-sec img{
 section#overal-sec p.centered {
     margin-bottom: 0;
 }
+a.has-tooltip:hover + div{
+    display: block;
+}
+section#overal-sec div.tooltip-top {
+    background-color: #8e8377;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    font-size: .9rem;
+    font-weight: 500;
+    padding: 5px;
+    position: absolute;
+    width: 154px;
+    top: -34px;
+    left: -30px;
+}
+section#overal-sec div.tooltip-top:after {
+    content: '▼';
+    font-size: .8rem;
+    position: absolute;
+    top: 25px;
+    left: 70px;
+    color: var(--emp);
+    background-color: transparent;
+}
 section#overal-sec footer {
     position: relative;
     margin: 20px 0;
@@ -74,8 +99,8 @@ section#overal-sec footer a:after {
     pointer-events: none;
     position: absolute;
     width: 0.0625rem;
-    height: 60%;
-    top: 20%;
+    height: 20px;
+    bottom: 3px;
     background: var(--dark);
     opacity: 0.3;
 }
@@ -213,6 +238,12 @@ form {
     /*grid-template-columns: 1fr 3fr;*/
     align-items: center;
 }
+form label {
+    align-self: center;
+}
+form div#postal-code-wrapper>label {
+    padding-right: 20px;
+}
 form label, form .radio-title {
     font-size:1.1em;
     font-weight: 700;
@@ -234,6 +265,17 @@ form div.form-control{
     grid-template-columns: 1fr 3fr;
     display: grid;
 }
+form div.shorts{
+    grid-template-columns: 1fr 1fr;
+}
+form div.short-input {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+}
+
+form div#postal-code-wrapper{
+    text-align: right;
+}
 form div.radio {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: baseline;
@@ -250,8 +292,16 @@ input[type="submit"], input[type="reset"]{
     background-color: var(--emp);
     color:var(--white);
     font-weight: 700;
+    cursor: pointer;
 }
-
+input[type="reset"]{
+    background-color: var(--off-white);
+    color: var(--emp);
+}
+input[type="submit"]:hover,input[type="reset"]:hover {
+    background-color: var(--gray);
+    color:var(--white);
+}
 form.validated input:invalid {
     border-color: var(--error);
     background-color: var(--highlight);
