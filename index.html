@@ -1,180 +1,197 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title> Jeeyool Min </title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link href="style.css" rel="stylesheet">
-    </head>
-    <body>
-        <div id="content-container">
-            <section id="overal-sec">
-                <img src="me_.jpg">
-                <h1 id="name-tag"> JEEYOOL MIN</h1>
-                <p class="centered">
-                    Web Developer
-                </p>
-                <footer>
-                    <a href="Resume.pdf" class="has-tooltip" download> Resume </a>
-                    <div class="tooltip-top" hidden>Download resume</div>
-                    <a href="#aboutme-sec">About Me</a>
-                    <a href="#education-sec">Education</a>
-                    <a href="#contactme-sec">Contact Me</a>
-                </footer>
-            </section>
-            <section id="aboutme-sec">
-                <div id="aboutme-container">
-                    <div id="about">
-                        <h2>ABOUT ME</h2>
-                        <p class="justify">
-                            I am <strong>detail-oriented</strong>, trying to be concise and create the best output under any
-                            circumstances. I tend to triple-check requirements and
-                            share feedback to enhance the quality of work, not only pulling my weight. I am such a <strong>proactive team player</strong> who are willing to work as a team leader with a strong
-                            sense of responsibility. 
-                            Currently, I am studying programming languages at Seneca to dream of being a web developer.
-                        </p>
-                        <p class="justify">
-                            I declare that my assessment is wholly my own work in accordance with Seneca Academic Policy. No part of this assessment
-                            has been copied manually or electronically from any other source (including web sites) except for the information
-                            supplied by the WEB222 instructors and / or made available in this assessment for my use. I also declare that no part of
-                            this assignment has been distributed to other students.
-                        </p>
-                        <div class="info-container short-margin">
-                            <h3>DATE:</h3><span><time datetime="2022-04-11">April 11, 2022</time></span>
-                        </div>
-                    </div>
-                    <div id="basic-info">
-                        <h2>BASIC INFO</h2>
-                        <div class="info-container">
-                            <h3>NAME:</h3><span>Jeeyool Min</span>
-                        </div>
-                        <div class="info-container">
-                            <h3>AGE:</h3>
-                            <span id="info-age">27</span>
-                        </div>
-                        <div class="info-container">
-                            <h3>EMAIL:</h3>
-                            <span id="info-email">jmin16@myseneca.ca</span>
-                        </div>
-                        <div class="info-container">
-                            <h3>LANGUAGE:</h3>
-                            <span id="info-language">English, Korean</span>
-                        </div>
-                        <div class="info-container">
-                            <h3>CLASS SECTION:</h3>
-                            <span id="info-class">WEB222 NAA</span>
-                        </div>
-                        <div class="info-container">
-                            <h3>STUDENT ID:</h3>
-                            <span id="info-sid">159-676-196</span>
-                        </div>
-                        <div class="info-container">
-                            <h3>INSTRUCTOR:</h3>
-                            <span id="info-prof">David Humphrey</span>
-                        </div>
-                    </p>
-                </div>
-            </section>
-            <section id="education-sec">
-                <h2>EDUCATION</h2>
-                <div class="cards-container">
-                    <div class="card-container">
-                        <div class="visual">
-                            <span class="edu-period">2013-2020</span>
-                            <h3>Bachelor's Degree</h3>
-                        </div>
-                        <div class="description">
-                            <h3>Bachelor's Degree</h3>
-                            <h4 class="edu-institute">UNIVERSITY OF SEOUL</h4>
-                            <p> Business Administration </p>
-                        </div>
-                    </div>
-                    <div class="card-container">
-                        <div class="visual">
-                            <span class="edu-period">2021-2022 (expected)</span>
-                            <h3>Advanced Diploma</h3>
-                        </div>
-                        <div class="description">
-                            <h3>Advanced Diploma</h3>
-                            <h4 class="edu-institute">SENECA COLLEGE</h4>
-                            <p> Computer Programming and Analysis </p>
-                            <ul>
-                                <li>President's Honor List Fall 2021</li>
-                                <li>Awarded to the students with a term GPA of 4.0</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="contactme-sec">
-                <h2>CONTACT ME</h2>
-                <form id="contact-form" method="post" action="https://httpbin.org/post">
-                    <div class="form-control">
-                        <label for="name">NAME<span class="required">*</span></label>
-                        <input id="name" name="name" type="text" tabindex="1" autocomplete="name" maxlength="25" pattern="[a-zA-Z ]+" required>
-                    </div>
-                    <div class="form-control">
-                        <label for="email">EMAIL<span class="required">*</span></label>
-                        <input id="email" name="email" type="email" placeholder="jmin16@myseneca.ca" tabindex="2" autocomplete="email" required>
-                    </div>
-                    <!--Extra input control-->
-                    <div class="form-control">
-                        <label for="phone">PHONE</label>
-                        <input id="phone" name="phone" type="tel" placeholder="6472126024" pattern="[0-9]{10}" tabindex="3" autocomplete="tel">
-                    </div>
-                    <div class="form-control">
-                        <label for="address">ADDRESS</label>
-                        <input id="address" name="address" type="text" tabindex="4" autocomplete="street-address">
-                    </div>
-                    <div class="form-control shorts">
-                        <div class="form-control short-input">
-                            <label for="city">CITY</label>
-                            <input id="city" name="city" type="text" list="city-list" tabindex="5" autocomplete="address-level2" pattern="[a-zA-Z ]*">
-                            <datalist id="city-list">
-                                <option value="Toronto"></option>
-                                <option value="Quebec City"></option>
-                                <option value="Vancouver"></option>
-                                <option value="Calgary"></option>
-                                <option value="Ottawa"></option>
-                                <option value="Montreal"></option>
-                                <option value="Victoria"></option>
-                                <option value="Charlottetown"></option>
-                                <option value="Saskatoon"></option>
-                                <option value="Whitehorse"></option>
-                                <option value="Halifax"></option>
-                                <option value="Winnipeg"></option>
-                                <option value="Banff"></option>
-                            </datalist>
-                        </div>
-                        <div class="form-control short-input" id="postal-code-wrapper">
-                            <label for="postal-code">POSTAL CODE</label>
-                            <input id="postal-code" name="postal-code" type="text" tabindex="6" autocomplete="postal-code" pattern="^[ABCEGHJ-MNPRSTVXY]\d[ABCEGHJ-NPRSTV-Z] ?\d[ABCEGHJ-NPRSTV-Z]\d$" placeholder="M2R 3V7">
-                        </div>
-                    </div>
-                    <!-- hourly rate input will appear here -->
-                    <div class="form-control radio">
-                        <span class="radio-title">TYPE</span>
-                        <div class="radio-option-wrapper">
-                            <input id="feedback-question" name="feedback-type" type="radio" value="Question" tabindex="7" checked>
-                            <label for="feedback-question">Question</label>
-                        </div>
-                        <div class="radio-option-wrapper">
-                            <input id="feedback-comment" name="feedback-type" type="radio" value="Comment">
-                            <label for="feedback-comment">Comment</label>
-                        </div>
-                        <div class="radio-option-wrapper">
-                            <input id="feedback-hiring" name="feedback-type" type="radio" value="Hiring">
-                            <label for="feedback-hiring">Hiring</label>
-                        </div>
-                    </div>
-                    <textarea id="feedback-message" name="message" rows="10" placeholder="Tell me about your opinions" tabindex="8" required></textarea>
-                    <div class="buttons">
-                        <input type="submit" value="SUBMIT" tabindex="9">
-                        <input type="reset" value="RESET" tabindex="10">
-                    </div>
-                </form>
-            </section>
+<html lang="en">
+<head>
+    <title> Jeeyool Min </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <section id="overal-sec">
+        <div class="content-container">
+            <img src="me_.jpg" alt="jeeyoolmin">
+            <h1 id="name-tag"> JEEYOOL MIN</h1>
+            <p class="centered">
+                Web Developer
+            </p>
+            <footer>
+                <a href="Resume.pdf" class="has-tooltip" download> Resume </a>
+                <div class="tooltip-top" hidden>Download resume</div>
+                <a href="#aboutme-sec">About Me</a>
+                <a href="#education-sec">Education</a>
+                <a href="#basic-info">Basic Info</a>
+                <a href="#contactme-sec">Contact Me</a>
+            </footer>
         </div>
-    </body>
-    <script src="app.js" type="text/javascript"></script>
+    </section>
+    <section id="aboutme-sec">
+        <div id="aboutme-container">
+            <div id="about">
+                <h2>ABOUT ME</h2>
+                <p class="justify">
+                    I am <strong>detail-oriented</strong>, trying to be concise and create the best output under any
+                    circumstances. I tend to triple-check requirements and
+                    share feedback to enhance the quality of work, not only pulling my weight. I am such a
+                    <strong>proactive team player</strong> who are willing to work as a team leader with a strong
+                    sense of responsibility.
+                    Currently, I am studying programming languages at Seneca to dream of being a web developer.
+                </p>
+                <p class="justify">
+                    I declare that my assessment is wholly my own work in accordance with Seneca Academic Policy. No
+                    part of this assessment
+                    has been copied manually or electronically from any other source (including web sites) except for
+                    the information
+                    supplied by the WEB222 instructors and / or made available in this assessment for my use. I also
+                    declare that no part of
+                    this assignment has been distributed to other students.
+                </p>
+                <div class="info-container short-margin">
+                    <h3>DATE:</h3><span><time datetime="2022-04-11">April 11, 2022</time></span>
+                </div>
+            </div>
+            <div id="basic-info">
+                <h2>BASIC INFO</h2>
+                <div class="info-container">
+                    <h3>NAME:</h3><span>Jeeyool Min</span>
+                </div>
+                <div class="info-container">
+                    <h3>AGE:</h3>
+                    <span id="info-age">27</span>
+                </div>
+                <div class="info-container">
+                    <h3>EMAIL:</h3>
+                    <span id="info-email">jmin16@myseneca.ca</span>
+                </div>
+                <div class="info-container">
+                    <h3>LANGUAGE:</h3>
+                    <span id="info-language">English, Korean</span>
+                </div>
+                <div class="info-container">
+                    <h3>CLASS SECTION:</h3>
+                    <span id="info-class">WEB222 NAA</span>
+                </div>
+                <div class="info-container">
+                    <h3>STUDENT ID:</h3>
+                    <span id="info-sid">159-676-196</span>
+                </div>
+                <div class="info-container">
+                    <h3>INSTRUCTOR:</h3>
+                    <span id="info-prof">David Humphrey</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="education-sec">
+        <div class="content-container">
+            <h2>EDUCATION</h2>
+            <div class="cards-container">
+                <div class="card-container">
+                    <div class="visual">
+                        <span class="edu-period">2013-2020</span>
+                        <h3>Bachelor's Degree</h3>
+                    </div>
+                    <div class="description">
+                        <h3>Bachelor's Degree</h3>
+                        <h4 class="edu-institute">UNIVERSITY OF SEOUL</h4>
+                        <p> Business Administration </p>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="visual">
+                        <span class="edu-period">2021-2022 (expected)</span>
+                        <h3>Advanced Diploma</h3>
+                    </div>
+                    <div class="description">
+                        <h3>Advanced Diploma</h3>
+                        <h4 class="edu-institute">SENECA COLLEGE</h4>
+                        <p> Computer Programming and Analysis </p>
+                        <ul>
+                            <li>President's Honor List Fall 2021</li>
+                            <li>Awarded to the students with a term GPA of 4.0</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contactme-sec">
+        <div class="content-container">
+            <h2>CONTACT ME</h2>
+            <form id="contact-form" method="post" action="https://httpbin.org/post">
+                <div class="form-control">
+                    <label for="name">NAME<span class="required">*</span></label>
+                    <input id="name" name="name" type="text" tabindex="1" autocomplete="name" maxlength="25"
+                        pattern="[a-zA-Z ]+" required>
+                </div>
+                <div class="form-control">
+                    <label for="email">EMAIL<span class="required">*</span></label>
+                    <input id="email" name="email" type="email" placeholder="jmin16@myseneca.ca" tabindex="2"
+                        autocomplete="email" required>
+                </div>
+                <!--Extra input control-->
+                <div class="form-control">
+                    <label for="phone">PHONE</label>
+                    <input id="phone" name="phone" type="tel" placeholder="6472126024" pattern="[0-9]{10}" tabindex="3"
+                        autocomplete="tel">
+                </div>
+                <div class="form-control">
+                    <label for="address">ADDRESS</label>
+                    <input id="address" name="address" type="text" tabindex="4">
+                </div>
+                <div class="form-control shorts">
+                    <div class="form-control short-input">
+                        <label for="city">CITY</label>
+                        <input id="city" name="city" type="text" list="city-list" tabindex="5"
+                            autocomplete="address-level2" pattern="[a-zA-Z ]*">
+                        <datalist id="city-list">
+                            <option value="Toronto"></option>
+                            <option value="Quebec City"></option>
+                            <option value="Vancouver"></option>
+                            <option value="Calgary"></option>
+                            <option value="Ottawa"></option>
+                            <option value="Montreal"></option>
+                            <option value="Victoria"></option>
+                            <option value="Charlottetown"></option>
+                            <option value="Saskatoon"></option>
+                            <option value="Whitehorse"></option>
+                            <option value="Halifax"></option>
+                            <option value="Winnipeg"></option>
+                            <option value="Banff"></option>
+                        </datalist>
+                    </div>
+                    <div class="form-control short-input" id="postal-code-wrapper">
+                        <label for="postal-code">POSTAL CODE</label>
+                        <input id="postal-code" name="postal-code" type="text" tabindex="6" autocomplete="postal-code"
+                            pattern="^[ABCEGHJ-MNPRSTVXY]\d[ABCEGHJ-NPRSTV-Z] ?\d[ABCEGHJ-NPRSTV-Z]\d$"
+                            placeholder="M2R 3V7">
+                    </div>
+                </div>
+                <!-- hourly rate input will appear here -->
+                <div class="form-control radio">
+                    <span class="radio-title">TYPE</span>
+                    <div class="radio-option-wrapper">
+                        <input id="feedback-question" name="feedback-type" type="radio" value="Question" tabindex="7"
+                            checked>
+                        <label for="feedback-question">Question</label>
+                    </div>
+                    <div class="radio-option-wrapper">
+                        <input id="feedback-comment" name="feedback-type" type="radio" value="Comment">
+                        <label for="feedback-comment">Comment</label>
+                    </div>
+                    <div class="radio-option-wrapper">
+                        <input id="feedback-hiring" name="feedback-type" type="radio" value="Hiring">
+                        <label for="feedback-hiring">Hiring</label>
+                    </div>
+                </div>
+                <textarea id="feedback-message" name="message" rows="10" placeholder="Tell me about your opinions"
+                    tabindex="8" required></textarea>
+                <div class="buttons">
+                    <input type="submit" value="SUBMIT" tabindex="9">
+                    <input type="reset" value="RESET" tabindex="10">
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="app.js"></script>
+</body>
 </html>

@@ -17,21 +17,26 @@ font-family: 'Shrikhand', cursive;
 }
 html, body {
     height: 100%;
+    width: 100%;
     margin:0;
     font-family: 'Open Sans', sans-serif;
     font-size:1.1rem;
     font-weight:400;
     color:var(--dark);
 }
-div#content-container{
-    width:100%;
+div.content-container{
+    /* limit the width and max width of content area */
+    width: 95vw;
+    max-width:1024px;
+    /* make them have equal margin on the left and the right*/
+    margin:auto;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
 }
 section {
     display: flex;
-    flex-direction: column;
     min-height: 800px;
-    align-items: center;
-    justify-content: center
 }
 h2 {
     font-weight: 700;
@@ -116,20 +121,23 @@ section#aboutme-sec {
 section#aboutme-sec #aboutme-container {
     display: grid;
     align-items: baseline;
-    grid-template-columns: 1fr 4fr 3fr 1fr;
-    column-gap: 60px;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+    max-width:1024px;
+    /* put equal margin on the left and the right*/
+    margin:auto;
 }
 #aboutme-container > div {
-    margin: 20px 60px 20px 20px;
+    margin: 20px;
 }
 section#aboutme-sec div.info-container {
     display: grid;
-    grid-template-columns: 2fr 1fr 4fr;
+    grid-template-columns: 1fr 1fr;
     margin: 20px 0;
     align-items: center;
 }
 section#aboutme-sec div.short-margin {
-    grid-template-columns: 1fr 1fr 15fr;
+    grid-template-columns: 1fr 2fr;
 }
 section#aboutme-sec div.info-container h3 {
     margin: 0;
@@ -137,18 +145,7 @@ section#aboutme-sec div.info-container h3 {
     color: var(--gray);
     font-size: 1.14rem;
 }
-section#aboutme-sec div.info-container span {
-        grid-column-start: 3;
-        grid-column-end: 4;
-}
-div#about{
-    grid-column-start: 2;
-    grid-column-end: 3;
-}
-div#basic-info {
-    grid-column-start: 3;
-    grid-column-end: 4;
-}
+
 section#aboutme-sec, section#contactme-sec{
     background-color: var(--white);
 }
@@ -169,15 +166,15 @@ div.cards-container {
     flex-direction: column;
 }
 div.card-container {
-    grid-template-columns: 1fr 1fr 2fr 1fr;
+    grid-template-columns: 1fr 2fr;
     display: grid;
     text-align: center;
     margin-bottom: 20px;
-    height: 200px;
+    min-height: 200px;
 }
 div.card-container div.visual {
     /*align-self: center;*/
-    grid-column: 2/3;
+    grid-column: 1/2;
     background-color: var(--emp);
     height: 100%;
     color:var(--white);
@@ -217,7 +214,7 @@ div.description>ul{
 }
 div.card-container div.description {
     /*align-self: center;*/
-    grid-column: 3/4;
+    grid-column: 2/3;
     text-align: left;
     padding-left: 50px;
     background-color: var(--white);
@@ -230,12 +227,10 @@ form {
     margin-top: 0;
     padding: 2em;
     background-color: var(--main);
-    min-width: 800px;
     margin-left: auto;
     margin-right: auto;
     display: grid;
     grid-gap: 20px;
-    /*grid-template-columns: 1fr 3fr;*/
     align-items: center;
 }
 form label {
@@ -254,7 +249,7 @@ form input[type="radio"]+label {
     font-weight: 500;
 }
 form input, form textarea {
-    padding:10px;
+    padding:7px;
     border: 1px solid rgb(206, 212, 218);
     font-size: 1rem;
     font-family: 'Open Sans', sans-serif;
@@ -306,4 +301,77 @@ form.validated input:invalid {
     border-color: var(--error);
     background-color: var(--highlight);
     border-width: 3px;
+}
+
+@media screen and (max-width:923px) {
+    /* collapse about me and basic info into two */
+    section#aboutme-sec #aboutme-container {
+        display: block;
+        margin: 20px 0;
+        align-items: center;
+    }
+    div#about{
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--main);
+    }
+    section#aboutme-sec div.short-margin {
+        grid-template-columns: 1fr 1fr;
+    }
+    div#about{
+        margin-bottom: 60px;
+    }
+    section#aboutme-sec #about > h2, #basic-info > h2{
+        text-align: center;
+    }
+    section {
+        min-height: 800px;
+    }
+    h2 {
+        margin:30px 0;
+    }
+    div.card-container div.description {
+        padding-left: 20px;
+    }
+}
+
+@media screen and (max-width:668px) {
+    html, body {
+        width: 100%;
+    }
+    div.card-container {
+        max-height: 150px;
+    }
+
+    div.card-container div.visual {
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        font-size: .85rem;
+    }
+
+    div.card-container div.description {
+        font-size: .9rem;
+        padding-left: 10px;
+    }
+    footer a.has-tooltip{
+        text-align: center;
+        display: block;
+    }
+    section#overal-sec footer a.has-tooltip:after {
+        height: 0;
+        width: 0;
+    }
+}
+@media screen and (max-width:400px) {
+    section {
+        width:100%;
+        min-height: 650px;
+    }
+    div, span, p, li, h3 {
+        font-size: .8rem;
+    }
+    h2 {
+        font-size:1.2rem;
+    }
+    section#aboutme-sec div.info-container h3 {
+        font-size:.9rem;
+    }
 }
