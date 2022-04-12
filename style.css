@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Raleway:wght@200;300;400;800;900&family=Rammetto+One&family=Shrikhand&display=swap');
 /*
-font-family: 'Open Sans', sans-serif;
-font-family: 'Rammetto One', cursive;
-font-family: 'Raleway', sans-serif;
-font-family: 'Shrikhand', cursive;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
 */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Raleway:wght@200;300;400;800;900&display=swap');
+
+/* Color Set*/
 :root {
     --emp: #8e8377;
     --main:#F0EDE8;
@@ -16,180 +16,218 @@ font-family: 'Shrikhand', cursive;
     --highlight: #fff9f9;
 }
 html, body {
+    /* html and body occupy the entire screen */
     height: 100%;
     width: 100%;
     margin:0;
+    /* set basic font and its styles */
     font-family: 'Open Sans', sans-serif;
-    font-size:1.1rem;
-    font-weight:400;
+    font-size: 1.1rem;
+    font-weight: 400;
     color:var(--dark);
 }
 a {
+    /* reset a link's default */
     text-decoration: none;
-    color:var(--dark);
+    color: var(--dark);
 }
 a:hover {
+    /* when a link is hovered over, displayed it underlined for better user experience */
     text-decoration: underline;
 }
-div.content-container{
-    /* limit the width and max width of content area */
-    width: 95vw;
-    max-width:1024px;
-    /* make them have equal margin on the left and the right*/
-    margin:auto;
-    align-items: center;
-    flex-direction: column;
-    display: flex;
-}
 section {
+    /* display the parent element in flex box so it gets margins properly by the child attribute (margin:auto) */
     display: flex;
+    /* set a minimum height for each section so it won't have a content-based height */
     min-height: 800px;
 }
+div.content-container{
+    /* limit the width and max width of content area up to 95% of the viewport and 1024px at max */
+    width: 95vw;
+    max-width:1024px;
+    /* make content area have equal margin on the left and the right*/
+    margin:auto;
+    /* display items in the flex content area with top to bottom direction */
+    display: flex;
+    flex-direction: column;
+    /* in Flex or Grid area, put item around the center*/
+    align-items: center;
+}
 h2 {
+    /* each section title's default style */
     font-weight: 700;
     font-size: 2.3rem;
     margin-bottom: 40px;
     color:var(--gray);
 }
-
 span.required {
+    /* set styles of (*) next to the required fields */
     font-weight: 800;
-    margin-left:3px;
+    margin-left: 3px;
 }
 .centered {
+    /* set child elements centered */
     text-align: center;
 }
-.justify{
+p.justify {
+    /* justify texts based on class */
     text-align: justify;
 }
-q{
-    color:var(--gray);
+q {
+    /* set different color for quotes so that they stand out less */
+    color: var(--gray);
 }
-section#overal-sec{
+/************************
+ * SECTION 1 : Overview *
+ ***********************/
+section#overall-sec{
     background-color: var(--main);
 }
-section#overal-sec img{
-    width:350px;
+section#overall-sec img{
+    width: 350px;
 }
-section#overal-sec p.centered {
+h1#name-tag {
+    /* set styles for my name at the top */
+    font-family: 'Raleway', sans-serif;
+    font-size: 3.13rem;
+    font-weight: 900;
+    color: var(--gray);
+    text-align: center;
+    margin: 30px 0 0 0;
+}
+section#overall-sec p.centered {
+    /* remove margin of the text "Web Developer" so it has ideal spacing to the following anchor list */
     margin-bottom: 0;
 }
-a.has-tooltip:hover + div{
-    display: block;
-}
-section#overal-sec div.tooltip-top {
-    background-color: #8e8377;
-    border-radius: 10px;
-    text-align: center;
-    color: white;
-    font-size: .9rem;
-    font-weight: 500;
-    padding: 5px;
-    position: absolute;
-    width: 154px;
-    top: -34px;
-    left: -30px;
-}
-section#overal-sec div.tooltip-top:after {
-    content: '▼';
-    font-size: .8rem;
-    position: absolute;
-    top: 25px;
-    left: 70px;
-    color: var(--emp);
-    background-color: transparent;
-}
-section#overal-sec footer {
+section#overall-sec footer {
+    /* set the link area relative-positional to help using pseudo classes such as after */
     position: relative;
     margin: 20px 0;
 }
-section#overal-sec footer a {
+section#overall-sec footer a {
     margin: 10px;
-    text-decoration: none;
-    color:var(--gray);
+    color: var(--gray);
 }
-section#overal-sec footer a:after {
+section#overall-sec footer a:after {
+    /* using after pseudo class, putting a border between links
+        can be done by using '|'and managing font-weight.. but using width is more handy */
     content: '';
+    /* place it based on absolute position (determined by the parent) */
+    position: absolute;
+    bottom: 3px;
+    /* style */
+    background-color: var(--dark);
+    opacity: 0.3;
+    width: 0.05rem;
+    height: 20px;
     margin-left: 0.5em;
     pointer-events: none;
-    position: absolute;
-    width: 0.0625rem;
-    height: 20px;
-    bottom: 3px;
-    background: var(--dark);
-    opacity: 0.3;
 }
-section#overal-sec footer a:last-child:after {
+/* exclude border for the last link */
+section#overall-sec footer a:last-child:after {
     content: '';
     margin: 0;
     width: 0;
     height: 0;
 }
-section#aboutme-sec {
-    align-items: center;
+section#overall-sec footer a.has-tooltip:hover + div{
+    /* when resume download link is hovered, display hidden tooltip */
+    display: block;
 }
-section#aboutme-sec #aboutme-container {
+/* style for resume download tooltip */
+section#overall-sec footer div.tooltip-top {
+    background-color: var(--emp);
+    color: var(--white);
+    border-radius: 10px;
+    font-size: .9rem;
+    font-weight: 500;
+    padding: 5px;
+    /* set it independent on other children links, and place it from the same position with the download link  */
+    position: absolute;
+    width: 154px;
+    top: -34px;
+    left: -30px;
+}
+/* add arrow for resume download tooltip */
+section#overall-sec footer div.tooltip-top:after {
+    content: '▼';
+    color: var(--emp);
+    font-size: .7rem;
+    /* must be absolute to center text inside the div */
+    position: absolute;
+    top: 26px;
+    right: 79px;
+}
+/************************************
+ * SECTION 2: About me & Basic info *
+ ************************************/
+section#aboutme-sec, section#contactme-sec{
+    background-color: var(--white);
+}
+section#aboutme-sec > #aboutme-container {
+    /* display each child sub-section in a grid box, */
     display: grid;
-    align-items: baseline;
     grid-template-columns: 1fr 1fr;
     column-gap: 40px;
-    max-width:1024px;
+    /* must set max-width when dealing with grid and wanting to restrict the max width */
+    max-width: 1024px;
+    /* set contents flowing from the top (at the same location regardless of divs) */
+    align-items: baseline;
     /* put equal margin on the left and the right*/
-    margin:auto;
+    margin: auto;
+}
+section#aboutme-sec div.info-container.short-margin {
+    /* when the screen's max-width, set the ratio of About me - Date:dateValue(1:2) */
+    grid-template-columns: 1fr 2fr;
 }
 #aboutme-container > div {
     margin: 20px;
 }
 section#aboutme-sec div.info-container {
+    /* display basic info groups in a grid box */
     display: grid;
+    /* field name and value width should be 1:1 */
     grid-template-columns: 1fr 1fr;
     margin: 20px 0;
-    align-items: center;
-}
-section#aboutme-sec div.short-margin {
-    grid-template-columns: 1fr 2fr;
 }
 section#aboutme-sec div.info-container h3 {
+    /* set style for field names in the Basic info */
     margin: 0;
-    font-weight: 700;
     color: var(--gray);
     font-size: 1.14rem;
+    font-weight: 700;
 }
 
-section#aboutme-sec, section#contactme-sec{
-    background-color: var(--white);
-}
+/************************
+ * SECTION 3: Education *
+ ************************/
 section#education-sec{
     background-color: var(--off-white);
 }
-h1#name-tag {
-    font-family: 'Raleway', sans-serif;
-    font-size: 3.13rem;
-    font-weight: 900;
-    color: var(--gray);
-    margin: 30px 0 0 0;
-}
-
 div.cards-container {
+    /* display container for all cards in a flex box from top to bottom */
     display: flex;
-    width: 100%;
     flex-direction: column;
+    /* set it to occupy the full content area */
+    width: 100%;
 }
 div.card-container {
-    grid-template-columns: 1fr 2fr;
+    /* card consists of 2 parts (visual - detail) */
     display: grid;
+    grid-template-columns: 1fr 2fr;
     text-align: center;
     margin-bottom: 20px;
+    /* set minimum height so different cards have the same minimum heights */
     min-height: 200px;
 }
 div.card-container div.visual {
-    /*align-self: center;*/
-    grid-column: 1/2;
-    background-color: var(--emp);
-    height: 100%;
-    color:var(--white);
+    /* use grid box to control spacing more easily */
     display: grid;
     grid-template-rows: 2fr 1fr 1fr 2fr;
+    /* grid-column: 1/2;
+    height: 100%; */
+    background-color: var(--emp);
+    color:var(--white);
 }
 span.edu-period{
     grid-row: 2/3;
@@ -223,13 +261,16 @@ div.description>ul{
     font-size: .9rem;
 }
 div.card-container div.description {
-    /*align-self: center;*/
     grid-column: 2/3;
     text-align: left;
     padding-left: 50px;
     background-color: var(--white);
     height: 100%;
 }
+
+/************************
+ * SECTION 4: Contact me *
+ ************************/
 section#contactme-sec{
     min-height: 1000px;
 }
@@ -321,14 +362,21 @@ div.form-control input[type="text"], input[type="tel"], input[type="email"],inpu
         align-items: center;
     }
     div#about{
-        padding-bottom: 20px;
+        padding: 20px;
         border-bottom: 1px solid var(--main);
     }
     section#aboutme-sec div.short-margin {
         grid-template-columns: 1fr 1fr;
+        max-width: 500px;
+        margin:auto;
     }
     div#about{
-        margin-bottom: 60px;
+        margin-bottom: 20px;
+    }
+    div#basic-info {
+        max-width: 500px;
+        margin: auto;
+        padding: 40px;
     }
     section#aboutme-sec #about > h2, #basic-info > h2{
         text-align: center;
@@ -376,7 +424,7 @@ div.form-control input[type="text"], input[type="tel"], input[type="email"],inpu
         font-size: .9rem;
         padding-left: 10px;
     }
-    section#overal-sec:hover div.tooltip-top {
+    section#overall-sec:hover div.tooltip-top {
         border-radius: 10px;
         font-size: .8rem;
         padding: 3px;
@@ -384,18 +432,17 @@ div.form-control input[type="text"], input[type="tel"], input[type="email"],inpu
         top: -17px;
         left: 127px;
     }
-    section#overal-sec div.tooltip-top:after {
+    section#overall-sec div.tooltip-top:after {
         top:18px
     }
     footer a.has-tooltip{
-        text-align: center;
         display: block;
     }
-    section#overal-sec footer a.has-tooltip:after {
+    section#overall-sec footer a.has-tooltip:after {
         height: 0;
         width: 0;
     }
-    section#overal-sec footer a:after {
+    section#overall-sec footer a:after {
         height: 15px;
         bottom:2;
     }
@@ -423,7 +470,7 @@ div.form-control input[type="text"], input[type="tel"], input[type="email"],inpu
     div, span, p, li, h3 {
         font-size: .95rem;
     }
-    section#overal-sec img {
+    section#overall-sec img {
         width: 335px;
     }
     section{
@@ -432,6 +479,12 @@ div.form-control input[type="text"], input[type="tel"], input[type="email"],inpu
     section#aboutme-sec div.info-container h3, footer {
         font-size:.9rem;
         font-size:.95rem;
+    }
+    div#basic-info {
+        padding: 20px;
+    }
+    #aboutme-container>div {
+        margin: 20px;
     }
     form label,
     form span.radio-title {
@@ -449,7 +502,7 @@ div.form-control input[type="text"], input[type="tel"], input[type="email"],inpu
     form input#city{
         margin-bottom: 20px;
     }
-    label.centered {
+    label.left {
         text-align: left;
     }
     form div.radio {
@@ -461,7 +514,7 @@ div.form-control input[type="text"], input[type="tel"], input[type="email"],inpu
     form {
         grid-gap: 15px;
     }
-    section#overal-sec footer a {
+    section#overall-sec footer a {
         margin:7px
     }
     h1#name-tag {
@@ -512,7 +565,7 @@ div.form-control input[type="text"], input[type="tel"], input[type="email"],inpu
 }
 
 @media screen and (max-width:372px) {
-    section#overal-sec img {
+    section#overall-sec img {
         width: 310px;
     }
     form label, form span.radio-title{
@@ -520,7 +573,6 @@ div.form-control input[type="text"], input[type="tel"], input[type="email"],inpu
     }
     h1#name-tag {
         font-size:2.7rem;
-        text-align: center;
     }
     footer a {
         font-size:.8rem;
