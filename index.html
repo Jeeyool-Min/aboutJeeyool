@@ -37,6 +37,7 @@
                     Currently, I am studying programming languages at Seneca to dream of being a web developer.
                 </p>
                 <p class="justify">
+                    <q>
                     I declare that my assessment is wholly my own work in accordance with Seneca Academic Policy. No
                     part of this assessment
                     has been copied manually or electronically from any other source (including web sites) except for
@@ -44,6 +45,7 @@
                     supplied by the WEB222 instructors and / or made available in this assessment for my use. I also
                     declare that no part of
                     this assignment has been distributed to other students.
+                    </q>
                 </p>
                 <div class="info-container short-margin">
                     <h3>DATE:</h3><span><time datetime="2022-04-11">April 11, 2022</time></span>
@@ -60,7 +62,7 @@
                 </div>
                 <div class="info-container">
                     <h3>EMAIL:</h3>
-                    <span id="info-email">jmin16@myseneca.ca</span>
+                    <span id="info-email"><a href="mailto:jmin16@myseneca.ca" title="send email">jmin16@myseneca.ca</a></span>
                 </div>
                 <div class="info-container">
                     <h3>LANGUAGE:</h3>
@@ -92,7 +94,7 @@
                     </div>
                     <div class="description">
                         <h3>Bachelor's Degree</h3>
-                        <h4 class="edu-institute">UNIVERSITY OF SEOUL</h4>
+                        <h4 class="edu-institute"><a href="https://www.uos.ac.kr/en">UNIVERSITY OF SEOUL</a></h4>
                         <p> Business Administration </p>
                     </div>
                 </div>
@@ -103,7 +105,7 @@
                     </div>
                     <div class="description">
                         <h3>Advanced Diploma</h3>
-                        <h4 class="edu-institute">SENECA COLLEGE</h4>
+                        <h4 class="edu-institute"><a href="https://senecacollege.ca">SENECA COLLEGE</a></h4>
                         <p> Computer Programming and Analysis </p>
                         <ul>
                             <li>President's Honor List Fall 2021</li>
@@ -139,32 +141,28 @@
                     <input id="address" name="address" type="text" tabindex="4">
                 </div>
                 <div class="form-control shorts">
-                    <div class="form-control short-input">
-                        <label for="city">CITY</label>
-                        <input id="city" name="city" type="text" list="city-list" tabindex="5"
-                            autocomplete="address-level2" pattern="[a-zA-Z ]*">
-                        <datalist id="city-list">
-                            <option value="Toronto"></option>
-                            <option value="Quebec City"></option>
-                            <option value="Vancouver"></option>
-                            <option value="Calgary"></option>
-                            <option value="Ottawa"></option>
-                            <option value="Montreal"></option>
-                            <option value="Victoria"></option>
-                            <option value="Charlottetown"></option>
-                            <option value="Saskatoon"></option>
-                            <option value="Whitehorse"></option>
-                            <option value="Halifax"></option>
-                            <option value="Winnipeg"></option>
-                            <option value="Banff"></option>
-                        </datalist>
-                    </div>
-                    <div class="form-control short-input" id="postal-code-wrapper">
-                        <label for="postal-code">POSTAL CODE</label>
-                        <input id="postal-code" name="postal-code" type="text" tabindex="6" autocomplete="postal-code"
-                            pattern="^[ABCEGHJ-MNPRSTVXY]\d[ABCEGHJ-NPRSTV-Z] ?\d[ABCEGHJ-NPRSTV-Z]\d$"
-                            placeholder="M2R 3V7">
-                    </div>
+                    <label for="city">CITY</label>
+                    <input id="city" name="city" type="text" list="city-list" tabindex="5"
+                        autocomplete="address-level2" pattern="[a-zA-Z ]*">
+                    <datalist id="city-list">
+                        <option value="Toronto"></option>
+                        <option value="Quebec City"></option>
+                        <option value="Vancouver"></option>
+                        <option value="Calgary"></option>
+                        <option value="Ottawa"></option>
+                        <option value="Montreal"></option>
+                        <option value="Victoria"></option>
+                        <option value="Charlottetown"></option>
+                        <option value="Saskatoon"></option>
+                        <option value="Whitehorse"></option>
+                        <option value="Halifax"></option>
+                        <option value="Winnipeg"></option>
+                        <option value="Banff"></option>
+                    </datalist>
+                    <label for="postal-code" class="centered">POSTAL CODE</label>
+                    <input id="postal-code" name="postal-code" type="text" tabindex="6" autocomplete="postal-code"
+                        pattern="^[ABCEGHJ-MNPRSTVXY]\d[ABCEGHJ-NPRSTV-Z] ?\d[ABCEGHJ-NPRSTV-Z]\d$"
+                        placeholder="M2R 3V7">
                 </div>
                 <!-- hourly rate input will appear here -->
                 <div class="form-control radio">

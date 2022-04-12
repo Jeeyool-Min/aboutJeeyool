@@ -24,6 +24,13 @@ html, body {
     font-weight:400;
     color:var(--dark);
 }
+a {
+    text-decoration: none;
+    color:var(--dark);
+}
+a:hover {
+    text-decoration: underline;
+}
 div.content-container{
     /* limit the width and max width of content area */
     width: 95vw;
@@ -52,8 +59,11 @@ span.required {
 .centered {
     text-align: center;
 }
-p.justify{
+.justify{
     text-align: justify;
+}
+q{
+    color:var(--gray);
 }
 section#overal-sec{
     background-color: var(--main);
@@ -196,7 +206,7 @@ div.description h3 {
 
     color: var(--dark);
 }
-div.description h4 {
+div.description h4, h4 a {
     margin-top: 5px;
     margin-bottom: 0;
     color: var(--emp);
@@ -221,14 +231,12 @@ div.card-container div.description {
     height: 100%;
 }
 section#contactme-sec{
-    min-height: 1100px;
+    min-height: 1000px;
 }
 form {
-    margin-top: 0;
+    margin: 0 auto 25px auto;
     padding: 2em;
     background-color: var(--main);
-    margin-left: auto;
-    margin-right: auto;
     display: grid;
     grid-gap: 20px;
     align-items: center;
@@ -239,7 +247,7 @@ form label {
 form div#postal-code-wrapper>label {
     padding-right: 20px;
 }
-form label, form .radio-title {
+form label, form span.radio-title {
     font-size:1.1em;
     font-weight: 700;
     color: var(--gray);
@@ -247,10 +255,12 @@ form label, form .radio-title {
 
 form input[type="radio"]+label {
     font-weight: 500;
+    vertical-align: top;
 }
 form input, form textarea {
     padding:7px;
     border: 1px solid rgb(206, 212, 218);
+    box-sizing: border-box;
     font-size: 1rem;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -261,11 +271,7 @@ form div.form-control{
     display: grid;
 }
 form div.shorts{
-    grid-template-columns: 1fr 1fr;
-}
-form div.short-input {
-    grid-template-columns: 1fr 1fr;
-    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 form div#postal-code-wrapper{
@@ -302,6 +308,10 @@ form.validated input:invalid {
     background-color: var(--highlight);
     border-width: 3px;
 }
+/* make the input inside form shrink as screen size decreases */
+div.form-control input[type="text"], input[type="tel"], input[type="email"],input[type="number"] {
+    width:100%;
+}
 
 @media screen and (max-width:923px) {
     /* collapse about me and basic info into two */
@@ -327,13 +337,28 @@ form.validated input:invalid {
         min-height: 800px;
     }
     h2 {
-        margin:30px 0;
+        margin: 0 0 30px 0
     }
     div.card-container div.description {
         padding-left: 20px;
     }
 }
 
+@media screen and (max-width:706px) {
+    form label, form span.radio-title {
+        font-size: 1rem;
+    }
+    form input, form textarea {
+        font-size: 0.9rem;
+        padding:4px;
+    }
+    form {
+        padding:1.5em;
+    }
+    section#contactme-sec {
+        min-height: 900px;
+    }
+}
 @media screen and (max-width:668px) {
     html, body {
         width: 100%;
@@ -351,6 +376,17 @@ form.validated input:invalid {
         font-size: .9rem;
         padding-left: 10px;
     }
+    section#overal-sec:hover div.tooltip-top {
+        border-radius: 10px;
+        font-size: .8rem;
+        padding: 3px;
+        width: 150px;
+        top: -17px;
+        left: 127px;
+    }
+    section#overal-sec div.tooltip-top:after {
+        top:18px
+    }
     footer a.has-tooltip{
         text-align: center;
         display: block;
@@ -359,19 +395,134 @@ form.validated input:invalid {
         height: 0;
         width: 0;
     }
+    section#overal-sec footer a:after {
+        height: 15px;
+        bottom:2;
+    }
+    form div.form-control {
+        grid-template-columns: 1fr 4fr;
+        display: grid;
+    }
+    
+    form div.shorts, form div.radio {
+        grid-template-columns: 1fr 1.33fr 1.33fr 1.33fr;
+    }
+    
+    footer {
+        font-size: .95rem;
+    }
+    section#contactme-sec {
+        min-height: 850px;
+    }
 }
+@media screen and (max-width:552px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    div, span, p, li, h3 {
+        font-size: .95rem;
+    }
+    section#overal-sec img {
+        width: 335px;
+    }
+    section{
+        min-height: 700px;
+    }
+    section#aboutme-sec div.info-container h3, footer {
+        font-size:.9rem;
+        font-size:.95rem;
+    }
+    form label,
+    form span.radio-title {
+        font-size: .9rem;
+    }
+    form span.radio-title{
+        grid-column: 1/4;
+    }
+    form div.shorts,
+    form div.radio, form div.form-control {
+        grid-template-columns: 1fr;
+        column-gap: 10px;
+        /* give spacing between city and postal code */
+    }
+    form input#city{
+        margin-bottom: 20px;
+    }
+    label.centered {
+        text-align: left;
+    }
+    form div.radio {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    form input, form textarea{
+        padding: 4px;
+    }
+    form {
+        grid-gap: 15px;
+    }
+    section#overal-sec footer a {
+        margin:7px
+    }
+    h1#name-tag {
+        font-size: 3rem;
+    }
+    footer a {
+        font-size:.85rem;
+    }
+}
+
 @media screen and (max-width:400px) {
+
     section {
         width:100%;
         min-height: 650px;
+        min-width: 350px;
     }
     div, span, p, li, h3 {
         font-size: .8rem;
     }
     h2 {
-        font-size:1.2rem;
+        font-size:1.4rem;
     }
     section#aboutme-sec div.info-container h3 {
         font-size:.9rem;
+    }
+    form label, form span.radio-title{
+        font-size: .85rem;
+    }
+    div.form-control input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="number"],
+    form textarea {
+        font-size: .8rem;
+    }
+    form .buttons{
+        display: flex;
+        justify-content: space-between;
+    }
+    input[type="submit"], input[type="reset"] {
+        width:49%;
+        font-size: .8rem;
+    }
+    section#contactme-sec {
+        min-height: 900px;
+    }
+}
+
+@media screen and (max-width:372px) {
+    section#overal-sec img {
+        width: 310px;
+    }
+    form label, form span.radio-title{
+        font-size: .75rem;
+    }
+    h1#name-tag {
+        font-size:2.7rem;
+        text-align: center;
+    }
+    footer a {
+        font-size:.8rem;
     }
 }
