@@ -1,5 +1,6 @@
 window.onload = function() {
     let form = document.querySelector('#contact-form');
+    // Submission Event
     form.onsubmit = function (event){
         // Trim values before submitting
         form.name.value = form.name.value.trim();
@@ -21,19 +22,24 @@ window.onload = function() {
         // If everything is good, allow this form to be submitted
         return true;
     }
+    // Hiring Click Event
     form.querySelectorAll("input[name='feedback-type']").forEach(input => input.addEventListener('change', showHourlyRate));
 }
 
 
 /*
-    // adding hourly rate input when the type of message is selected as hiring
+    Add or remove hourly rate input when the type of message is selected as hiring
     <div class="form-control"><label for="hourly-rate">HOURLY RATE($)</label><input id="hourly-rate" name="hourly-rate" type="number" step="0.1" required min=0></div>
 */
 function showHourlyRate(e){
+    // If hiring type is selected
     if(e.target.id === 'feedback-hiring') {
+        // Create a div to label and input area for hourly rate
         let div = document.createElement('div');
         div.className = 'form-control';
         div.id = 'hourly-rate-wrapper'
+
+        // Create a label and connect it with input by setting for attribute
         let label = document.createElement('label');
         label.setAttribute('for','hourly-rate');
         label.innerHTML = 'HOURLY RATE($)';
@@ -42,6 +48,8 @@ function showHourlyRate(e){
         span.innerHTML='*';
         label.appendChild(span);
         div.appendChild(label);
+
+        // Create an input and set several attributes and constraints
         let input = document.createElement('input');
         input.id = 'hourly-rate';
         input.name = 'hourly-rate';
@@ -51,10 +59,14 @@ function showHourlyRate(e){
         input.min = 0;
         div.appendChild(input);
         document.querySelector('div.shorts').after(div);
-    } else {
-        document.querySelector('#hourly-rate-wrapper').remove();
-    }
         
+    } else {
+        // If not, remove the div
+        let hourlyRate= document.querySelector('#hourly-rate-wrapper');
+        if(hourlyRate) {
+            hourlyRate.remove();
+        }
+    }
 }
 
 /*************************************************************

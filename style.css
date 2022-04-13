@@ -15,7 +15,8 @@
     --error:#ffb9ad;
     --highlight: #fff9f9;
 }
-html, body {
+html, 
+body {
     /* html and body occupy the entire screen */
     height: 100%;
     width: 100%;
@@ -161,7 +162,8 @@ section#overall-sec footer div.tooltip-top:after {
 /************************************
  * SECTION 2: About me & Basic info *
  ************************************/
-section#aboutme-sec, section#contactme-sec{
+section#aboutme-sec, 
+section#contactme-sec {
     background-color: var(--white);
 }
 section#aboutme-sec > #aboutme-container {
@@ -224,49 +226,55 @@ div.card-container div.visual {
     /* use grid box to control spacing more easily */
     display: grid;
     grid-template-rows: 2fr 1fr 1fr 2fr;
-    /* grid-column: 1/2;
-    height: 100%; */
     background-color: var(--emp);
     color:var(--white);
 }
-span.edu-period{
+span.edu-period {
+    /* start from the second row (leave the first grid row empty) */
     grid-row: 2/3;
+    /* align vertically */
     align-self: center;
 }
-.visual h3 {
+div.visual h3 {
+    /* start from the right next cell */
     grid-row: 3/4;
+    /* align vertically */
     align-self: center;
     margin:0;
 }
-div.description h3 {
-    margin-bottom: 0px;
-    font-weight: 100;
-
-    color: var(--dark);
-}
-div.description h4, h4 a {
-    margin-top: 5px;
-    margin-bottom: 0;
-    color: var(--emp);
-    font-weight: 800;
-}
-div.description > p {
-    margin-top:15px;
-    margin-bottom:5px;
-    color: var(--dark);
-}
-div.description>ul{
-    margin-top:0;
-    color: var(--gray);
-    font-size: .9rem;
-}
 div.card-container div.description {
-    grid-column: 2/3;
+    /* override the text-alignment set by card-container */
     text-align: left;
     padding-left: 50px;
     background-color: var(--white);
-    height: 100%;
 }
+div.description h3 {
+    /* diploma title style */
+    color: var(--dark);
+    margin-bottom: 0px;
+    font-weight: 400;
+}
+div.description h4, 
+h4 a {
+    /* institution title style */
+    color: var(--emp);
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-weight: 800;
+}
+div.description > p {
+    /* major title style */
+    color: var(--dark);
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+div.description > ul{
+    /* detail list style */
+    color: var(--gray);
+    margin-top:0;
+    font-size: .9rem;
+}
+
 
 /************************
  * SECTION 4: Contact me *
@@ -275,72 +283,77 @@ section#contactme-sec{
     min-height: 1000px;
 }
 form {
-    margin: 0 auto 25px auto;
-    padding: 2em;
     background-color: var(--main);
+    /* put margin-bottom (h2 has m-b) so it looks aligned and put them around center vertically */
+    margin: 0 auto 25px auto;
+    /* put padding so form could breathe */
+    padding: 2em;
+    /* display the form in a grid box */
     display: grid;
     grid-gap: 20px;
-    align-items: center;
 }
-form label {
-    align-self: center;
-}
-form div#postal-code-wrapper>label {
-    padding-right: 20px;
-}
-form label, form span.radio-title {
-    font-size:1.1em;
+form label, 
+form span.radio-title {
+    /* label style */
+    font-size: 1.1em;
     font-weight: 700;
     color: var(--gray);
 }
-
-form input[type="radio"]+label {
-    font-weight: 500;
-    vertical-align: top;
-}
-form input, form textarea {
-    padding:7px;
-    border: 1px solid rgb(206, 212, 218);
-    box-sizing: border-box;
+form input, 
+form textarea {
+    color: var(--gray);
     font-size: 1rem;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    color: var(--gray);
+    /* count padding and margin into box size, so fields ends at the same line with text area*/
+    box-sizing: border-box;
+    padding: 7px;
+    border: 1px solid rgb(206, 212, 218);
 }
-form div.form-control{
-    grid-template-columns: 1fr 3fr;
+form div.form-control {
+    /* display field name - value with a ratio of 1:3 in a grid box */
     display: grid;
+    grid-template-columns: 1fr 3fr;
 }
-form div.shorts{
+form div.shorts {
+    /* display 2 field name - value with a ratio of 1:1 */
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-
+form label {
+    /* align label and input box horizontally */
+    align-self: center;
+}
+form div#postal-code-wrapper > label {
+    padding-right: 20px;
+}
+form input[type="radio"]+label {
+    /* make radio options less bolder */
+    font-weight: 500;
+}
 form div#postal-code-wrapper{
     text-align: right;
 }
 form div.radio {
+    /* put the field name and value options in the same row */
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    align-items: baseline;
-}
-.radio-option-wrapper:first-child{
-    grid-column-start: 2;
 }
 form .buttons {
+    /* put submit and reset button in the right */
     text-align: right;
 }
-
-input[type="submit"], input[type="reset"]{
-    width:150px;
+input[type="submit"], input[type="reset"] {
+    width: 150px;
     background-color: var(--emp);
-    color:var(--white);
+    color: var(--white);
     font-weight: 700;
     cursor: pointer;
 }
-input[type="reset"]{
+input[type="reset"] {
     background-color: var(--off-white);
     color: var(--emp);
 }
-input[type="submit"]:hover,input[type="reset"]:hover {
+input[type="submit"]:hover,
+input[type="reset"]:hover {
     background-color: var(--gray);
     color:var(--white);
 }
@@ -350,163 +363,170 @@ form.validated input:invalid {
     border-width: 3px;
 }
 /* make the input inside form shrink as screen size decreases */
-div.form-control input[type="text"], input[type="tel"], input[type="email"],input[type="number"] {
+div.form-control input[type="text"], 
+input[type="tel"], 
+input[type="email"],
+input[type="number"] {
     width:100%;
 }
 
+/***************************
+ *******Responsive web******
+ ***************************/
 @media screen and (max-width:923px) {
-    /* collapse about me and basic info into two */
-    section#aboutme-sec #aboutme-container {
-        display: block;
-        margin: 20px 0;
-        align-items: center;
-    }
-    div#about{
-        padding: 20px;
-        border-bottom: 1px solid var(--main);
-    }
-    section#aboutme-sec div.short-margin {
-        grid-template-columns: 1fr 1fr;
-        max-width: 500px;
-        margin:auto;
-    }
-    div#about{
-        margin-bottom: 20px;
-    }
-    div#basic-info {
-        max-width: 500px;
-        margin: auto;
-        padding: 40px;
-    }
-    section#aboutme-sec #about > h2, #basic-info > h2{
-        text-align: center;
-    }
     section {
+        /* put a common minimum height so they look balanced */
         min-height: 800px;
     }
     h2 {
         margin: 0 0 30px 0
     }
+    /* collapse about me and basic info into two */
+    section#aboutme-sec #aboutme-container {
+        /* override grid setting */
+        display: block;
+        margin: 20px 0;
+        align-items: center;
+    }
+    section#aboutme-sec #about > h2, #basic-info > h2{
+        /* when it's collapsed, put title around center */
+        text-align: center;
+    }
+    div#about{
+        padding: 20px;
+        margin-bottom: 20px;
+        /* put a border between about me and basic info */
+        border-bottom: 1px solid var(--main);
+    }
+    section#aboutme-sec div.info-container.short-margin {
+        /* override the ratio when it's collapsed so it moves with other field names in basic info */
+        grid-template-columns: 1fr 1fr;
+        max-width: 500px;
+        margin: auto;
+    }
+    div#basic-info {
+        /* limit the max width and put equal margins aside */
+        max-width: 500px;
+        padding: 40px;
+        margin: auto;
+    }
     div.card-container div.description {
+        /* reduce padding left of the detail part in education */
         padding-left: 20px;
     }
 }
-
 @media screen and (max-width:706px) {
-    form label, form span.radio-title {
+    form label, 
+    form span.radio-title {
         font-size: 1rem;
     }
-    form input, form textarea {
+    form input, 
+    form textarea {
         font-size: 0.9rem;
-        padding:4px;
+        padding: 4px;
     }
     form {
-        padding:1.5em;
+        padding: 1.5em;
     }
     section#contactme-sec {
         min-height: 900px;
     }
 }
 @media screen and (max-width:668px) {
-    html, body {
-        width: 100%;
+    footer {
+        font-size: .95rem;
+    }
+    footer a.has-tooltip{
+        /* collapse from other items */
+        display: block;
+    }
+    /* coordinate the location and size of tooltip */
+    section#overall-sec:hover div.tooltip-top {
+        font-size: .8rem;
+        padding: 3px;
+        width: 140px;
+        top: -17px;
+        left: 134px;
+    }
+    section#overall-sec footer div.tooltip-top:after {
+        top: 18px;
+        right: 68px;
+    }
+    section#overall-sec footer a.has-tooltip:after {
+        /* when it's collapsed, remove the existing border */
+        height: 0;
+    }
+    section#overall-sec footer a:after {
+        /* resize borders between items*/
+        height: 15px;
     }
     div.card-container {
         max-height: 150px;
     }
-
     div.card-container div.visual {
+        /* reduce margin (1 fraction on the top and the bottom ) */
         grid-template-rows: 1fr 1fr 1fr 1fr;
         font-size: .85rem;
     }
-
     div.card-container div.description {
         font-size: .9rem;
         padding-left: 10px;
     }
-    section#overall-sec:hover div.tooltip-top {
-        border-radius: 10px;
-        font-size: .8rem;
-        padding: 3px;
-        width: 150px;
-        top: -17px;
-        left: 127px;
-    }
-    section#overall-sec div.tooltip-top:after {
-        top:18px
-    }
-    footer a.has-tooltip{
-        display: block;
-    }
-    section#overall-sec footer a.has-tooltip:after {
-        height: 0;
-        width: 0;
-    }
-    section#overall-sec footer a:after {
-        height: 15px;
-        bottom:2;
-    }
     form div.form-control {
+        /* coordinate the ratio of label and input area */
         grid-template-columns: 1fr 4fr;
-        display: grid;
     }
-    
-    form div.shorts, form div.radio {
+    form div.shorts, 
+    form div.radio {
+        /* coordinate the ratio of label and input area 
+           so they move together with other fields above */
         grid-template-columns: 1fr 1.33fr 1.33fr 1.33fr;
-    }
-    
-    footer {
-        font-size: .95rem;
-    }
-    section#contactme-sec {
-        min-height: 850px;
     }
 }
 @media screen and (max-width:552px) {
     h2 {
         font-size: 2rem;
     }
-
     div, span, p, li, h3 {
-        font-size: .95rem;
+        font-size: .9rem;
+    }
+    section {
+        min-height: 700px;
     }
     section#overall-sec img {
         width: 335px;
     }
-    section{
-        min-height: 700px;
+    h1#name-tag {
+        font-size: 3rem;
     }
-    section#aboutme-sec div.info-container h3, footer {
-        font-size:.9rem;
-        font-size:.95rem;
+    section#aboutme-sec div.info-container h3,
+    footer {
+        font-size: .9rem;
+    }
+    /* coordinate the location and size of tooltip */
+    section#overall-sec:hover div.tooltip-top {
+        font-size: .75rem;
+        padding: 2px;
+        width: 125px;
+        left: 113px;
+    }
+    section#overall-sec footer div.tooltip-top:after {
+        top: 15px;
+        right: 59px;
+    }
+    section#overall-sec footer a {
+        margin: 7px;
+        font-size: .85rem;
+    }
+    div#aboutme-container > div {
+        margin: 20px;
     }
     div#basic-info {
         padding: 20px;
     }
-    #aboutme-container>div {
-        margin: 20px;
-    }
-    form label,
-    form span.radio-title {
-        font-size: .9rem;
-    }
-    form span.radio-title{
-        grid-column: 1/4;
-    }
-    form div.shorts,
-    form div.radio, form div.form-control {
-        grid-template-columns: 1fr;
-        column-gap: 10px;
-        /* give spacing between city and postal code */
-    }
-    form input#city{
-        margin-bottom: 20px;
-    }
-    label.left {
-        text-align: left;
-    }
-    form div.radio {
-        grid-template-columns: 1fr 1fr 1fr;
+    section#contactme-sec {
+        /* label and input area get collapsed, so increase the height of the section */
+        min-height: 1100px;
     }
     form input, form textarea{
         padding: 4px;
@@ -514,21 +534,44 @@ div.form-control input[type="text"], input[type="tel"], input[type="email"],inpu
     form {
         grid-gap: 15px;
     }
-    section#overall-sec footer a {
-        margin:7px
+    form label,
+    form span.radio-title {
+        font-size: .9rem;
     }
-    h1#name-tag {
-        font-size: 3rem;
+    form span.radio-title{
+        /* set the tile occupy the row */
+        grid-column: 1/4;
     }
-    footer a {
-        font-size:.85rem;
+    form div.shorts,
+    form div.radio, 
+    form div.form-control {
+        /* separate label and input area in its own line */
+        grid-template-columns: 1fr;
+        column-gap: 10px;
+    }
+    form input#city{
+        /* give spacing between city and postal code */
+        margin-bottom: 20px;
+    }
+    form input[type="radio"]+label {
+        vertical-align: top;
+    }
+    label.left {
+        /* override existing setting of postal code label to left alignment */
+        text-align: left;
+    }
+    form div.radio {
+        /* place radio options at a 1:1:1 ratio */
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    form .buttons {
+        /* place button at the end */
+        display: flex;
+        justify-content: space-between;
     }
 }
-
 @media screen and (max-width:400px) {
-
     section {
-        width:100%;
         min-height: 650px;
         min-width: 350px;
     }
@@ -536,12 +579,10 @@ div.form-control input[type="text"], input[type="tel"], input[type="email"],inpu
         font-size: .8rem;
     }
     h2 {
-        font-size:1.4rem;
+        font-size: 1.4rem;
     }
-    section#aboutme-sec div.info-container h3 {
-        font-size:.9rem;
-    }
-    form label, form span.radio-title{
+    form label,
+    form span.radio-title{
         font-size: .85rem;
     }
     div.form-control input[type="text"],
@@ -551,30 +592,25 @@ div.form-control input[type="text"], input[type="tel"], input[type="email"],inpu
     form textarea {
         font-size: .8rem;
     }
-    form .buttons{
-        display: flex;
-        justify-content: space-between;
-    }
     input[type="submit"], input[type="reset"] {
-        width:49%;
+        width: 49%;
         font-size: .8rem;
     }
-    section#contactme-sec {
-        min-height: 900px;
-    }
 }
-
 @media screen and (max-width:372px) {
+    section#overall-sec footer a:after {
+        bottom: 25px;
+    }
     section#overall-sec img {
         width: 310px;
     }
-    form label, form span.radio-title{
-        font-size: .75rem;
-    }
     h1#name-tag {
-        font-size:2.7rem;
+        font-size: 2.7rem;
     }
     footer a {
         font-size:.8rem;
+    }
+    form label, form span.radio-title{
+        font-size: .75rem;
     }
 }
