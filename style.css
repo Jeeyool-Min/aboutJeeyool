@@ -200,12 +200,27 @@ section#aboutme-sec div.info-container h3 {
     font-weight: 700;
 }
 
+/************************************
+ * SECTION 3: Technical Projects *
+ ************************************/
+ section#project-sec  #project-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+    max-width: 1024px;
+    align-items: baseline;
+    margin: auto;
+ }
+ 
 /************************
- * SECTION 3: Education *
+ * SECTION 4: Education & Work Experience *
  ************************/
 section#education-sec{
     background-color: var(--off-white);
 }
+#workexperience-sec {
+    background-color: var(--main);
+  }
 div.cards-container {
     /* display container for all cards in a flex box from top to bottom */
     display: flex;
@@ -225,11 +240,11 @@ div.card-container {
 div.card-container div.visual {
     /* use grid box to control spacing more easily */
     display: grid;
-    grid-template-rows: 2fr 1fr 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     background-color: var(--emp);
     color:var(--white);
 }
-span.edu-period {
+span.edu-period, span.work-period {
     /* start from the second row (leave the first grid row empty) */
     grid-row: 2/3;
     /* align vertically */
@@ -277,7 +292,7 @@ div.description > ul{
 
 
 /************************
- * SECTION 4: Contact me *
+ * SECTION 5: Contact me *
  ************************/
 section#contactme-sec{
     min-height: 1000px;
@@ -463,6 +478,9 @@ input[type="number"] {
     div.card-container {
         max-height: 150px;
     }
+    div.wide-card-container {
+        margin-bottom: 110px;
+    }
     div.card-container div.visual {
         /* reduce margin (1 fraction on the top and the bottom ) */
         grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -524,6 +542,9 @@ input[type="number"] {
     div#basic-info {
         padding: 20px;
     }
+    div.wide-card-container {
+        margin-bottom: 75px;
+    }
     section#contactme-sec {
         /* label and input area get collapsed, so increase the height of the section */
         min-height: 1100px;
@@ -570,6 +591,21 @@ input[type="number"] {
         justify-content: space-between;
     }
 }
+@media screen and (max-width:484px) {
+    div.wide-card-container {
+        margin-bottom: 90px;
+    }
+}
+@media screen and (max-width:443px) {
+    div.wide-card-container {
+        margin-bottom: 110px;
+    }
+}
+@media screen and (max-width:407px) {
+    div.wide-card-container {
+        margin-bottom: 130px;
+    }
+}
 @media screen and (max-width:400px) {
     section {
         min-height: 650px;
@@ -595,6 +631,12 @@ input[type="number"] {
     input[type="submit"], input[type="reset"] {
         width: 49%;
         font-size: .8rem;
+    }
+    div.wide-card-container {
+        margin-bottom: 60px;
+    }
+    div.wide-card-container {
+        margin-bottom: 85px;
     }
 }
 @media screen and (max-width:372px) {
