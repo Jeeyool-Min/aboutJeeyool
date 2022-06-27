@@ -164,7 +164,7 @@ section#overall-sec footer div.tooltip-top:after {
  ************************************/
 section#aboutme-sec, 
 section#contactme-sec {
-    background-color: var(--white);
+    background-color: var(--off-white);
 }
 section#aboutme-sec > #aboutme-container {
     /* display each child sub-section in a grid box, */
@@ -199,14 +199,18 @@ section#aboutme-sec div.info-container h3 {
     font-size: 1.14rem;
     font-weight: 700;
 }
+section.short-sec {
+    min-height: 600px;
+}
 
 /************************************
  * SECTION 3: Technical Projects *
  ************************************/
+
  section#project-sec  #project-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 40px;
+    column-gap: 70px;
     max-width: 1024px;
     align-items: baseline;
     margin: auto;
@@ -500,6 +504,8 @@ input[type="number"] {
            so they move together with other fields above */
         grid-template-columns: 1fr 1.33fr 1.33fr 1.33fr;
     }
+    section#project-sec  #project-container {
+        column-gap: 30px;
 }
 @media screen and (max-width:552px) {
     h2 {
